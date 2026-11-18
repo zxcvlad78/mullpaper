@@ -43,6 +43,5 @@ pub fn apply_velocity(
     for (velocity, mut transform) in &mut query {
         transform.translation.x += velocity.linear.x * time.delta_secs();
         transform.translation.y += velocity.linear.y * time.delta_secs();
-        println!("{}", transform.translation.to_string());
     }
 }

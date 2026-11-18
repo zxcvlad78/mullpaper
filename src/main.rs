@@ -9,9 +9,13 @@ fn main() {
         .add_systems(Startup, spawn)
         .run();
 }
-/* */
 
-//
+/*
+sex
+cxa
+
+*/
+
 fn spawn(
     mut commands: Commands,
     asset_server: Res<AssetServer>
