@@ -4,11 +4,15 @@ use bevy::prelude::*;
 pub struct Character;
 
 #[derive(Component)]
-pub struct DesiredVelocity { vector: Vec2 } 
-
+pub struct DesiredVelocity { pub vector: Vec2 } 
+impl Default for DesiredVelocity {
+    fn default() -> Self {
+        Self { vector: Vec2::default() }
+    }
+}
 
 #[derive(Component)]
-pub struct MoveSpeed { value: f32 }
+pub struct MoveSpeed { pub value: f32 }
 impl Default for MoveSpeed {
     fn default() -> Self {
         Self { value: 100.0 }
@@ -16,10 +20,4 @@ impl Default for MoveSpeed {
 }
 
 #[derive(Component)]
-pub struct MoveInput { pub vector: Vec2 }
-impl Default for MoveInput {
-    fn default() -> Self {
-        Self { vector: Vec2 { x: 0.0, y: 0.0 } }
-    }
-}
-
+pub struct CharacterController;

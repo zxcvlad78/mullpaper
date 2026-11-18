@@ -1,21 +1,21 @@
 use bevy::prelude::*;
-mod character;
+pub mod character;
+use character::*;
 
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
-        .add_systems(Startup, setup)
-        .add_systems(Update, player_system)
+        .add_plugins(character::CharacterPlugin)
+        .add_systems(Startup, spawn)
         .run();
 }
 
-pub fn setup(mut commands: Commands) {
-    commands.spawn(Character);
+fn spawn(mut commands: Commands) {
+    commands.spawn((
+        Transform::from_xyz(0.0, 0.0, 0.0),
+        components::MoveSpeed::default(),
+        components::DesiredVelocity::default(),
+    ));
 }
 
-pub fn player_system(query: Query<&Character>) {
-    for player in query.iter() {
-        
-    }
-}
 

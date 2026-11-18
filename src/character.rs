@@ -7,7 +7,8 @@ impl Plugin for CharacterPlugin {
     fn build(&self, app: &mut App) {
         app.add_systems(
             Update,
-            (apply_desired_velocity_to_controller, apply_gravity_to_controller),
+            systems::apply_input_to_desired_velocity
         );
     }
 }
+
