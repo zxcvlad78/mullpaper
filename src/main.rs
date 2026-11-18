@@ -10,12 +10,6 @@ fn main() {
         .run();
 }
 
-/*
-sex
-cxa
-
-*/
-
 fn spawn(
     mut commands: Commands,
     asset_server: Res<AssetServer>
@@ -31,5 +25,3 @@ fn spawn(
         components::CharacterController
     ));
 }
-
-
