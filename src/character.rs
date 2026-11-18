@@ -6,8 +6,12 @@ pub struct CharacterPlugin;
 impl Plugin for CharacterPlugin {
     fn build(&self, app: &mut App) {
         app.add_systems(
-            Update,
-            systems::apply_input_to_desired_velocity
+            FixedUpdate,
+            (
+                systems::apply_input_to_desired_velocity,
+                systems::apply_desired_velocity,
+                systems::apply_velocity
+            )
         );
     }
 }
