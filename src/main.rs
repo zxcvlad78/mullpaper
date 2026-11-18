@@ -1,4 +1,5 @@
 use bevy::prelude::*;
+mod character;
 
 fn main() {
     App::new()
@@ -8,17 +9,13 @@ fn main() {
         .run();
 }
 
-#[derive(Component)]
-pub struct Player {
-    pub name: String
-}
-
 pub fn setup(mut commands: Commands) {
-    commands.spawn(Player {name : "Player".to_string()});
+    commands.spawn(Character);
 }
 
-pub fn player_system(query: Query<&Player>) {
+pub fn player_system(query: Query<&Character>) {
     for player in query.iter() {
+        
     }
 }
 
