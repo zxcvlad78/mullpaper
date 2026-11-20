@@ -1,16 +1,17 @@
 use bevy::prelude::*;
 use lightyear::prelude::*;
-use serde::{Deserialize, Serialize};
 
-pub mod character;
+pub mod character; use character::*; use character::components::*;
+pub mod network; use network::*; use network::components::*;
 
 pub struct SharedPlugin;
 impl Plugin for SharedPlugin {
     fn build(&self, app: &mut App) {
         app
-            .add_plugins(character::CharacterPlugin)
+            .add_plugins(CharacterPlugin)
+            .add_plugins(NetworkPlugin)
 
-            .register_type::<Transform>()
-            .replicate::<Transform>()
+            .register_type::<NetworkPosition>()
+            .component::<NetworkPosition>().replicate();
     }
 }
