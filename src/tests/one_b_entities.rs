@@ -14,5 +14,6 @@ impl Plugin for OneBEntitiesPlugin {
 fn spawn(
     mut commands: Commands,
 ) {
+
     commands.spawn(character::bundles::CharacterBundle::default());
 }

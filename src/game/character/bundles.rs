@@ -7,5 +7,5 @@ pub struct CharacterBundle {
     velocity: Velocity,
     desired_velocity: DesiredVelocity,
     move_speed: MoveSpeed,
-    sprite: Sprite
+    pub sprite: Sprite
 }
