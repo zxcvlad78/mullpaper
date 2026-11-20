@@ -6,5 +6,6 @@ pub struct CharacterBundle {
     transform: Transform,
     velocity: Velocity,
     desired_velocity: DesiredVelocity,
-    move_speed: MoveSpeed
+    move_speed: MoveSpeed,
+    sprite: Sprite
 }
