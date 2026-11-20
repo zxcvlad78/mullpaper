@@ -13,6 +13,7 @@ impl Plugin for CharacterPlugin {
                 systems::apply_desired_velocity,
                 systems::apply_velocity
             )
+            
         );
     }
 }
