@@ -4,11 +4,6 @@ use bevy::prelude::*;
 pub struct Character;
 
 #[derive(Component, Default)]
-pub struct CharacterInput {
-    pub direction: Vec2
-} 
-
-#[derive(Component, Default)]
 pub struct Velocity {
     pub linear: Vec2,
     pub angular: f32

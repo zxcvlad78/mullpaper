@@ -1,17 +1,16 @@
 use bevy::prelude::*;
 use lightyear::prelude::*;
 
-pub mod character; use character::*; use character::components::*;
-pub mod network; use network::*; use network::components::*;
+pub mod network;
 
-pub struct SharedPlugin;
-impl Plugin for SharedPlugin {
+pub struct ServerPlugin;
+impl Plugin for ServerPlugin {
     fn build(&self, app: &mut App) {
-        app
-            .add_plugins(CharacterPlugin)
-            .add_plugins(NetworkPlugin)
+        // app
+        //     .add_plugins(CharacterPlugin)
+        //     .add_plugins(NetworkPlugin)
 
-            .register_type::<NetworkPosition>()
-            .component::<NetworkPosition>().replicate();
+        //     .register_type::<NetworkPosition>()
+        //     .component::<NetworkPosition>().replicate();
     }
 }
