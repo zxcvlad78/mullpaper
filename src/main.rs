@@ -1,11 +1,11 @@
 use bevy::prelude::*;
-pub mod character;
-use character::*;
+mod game;
+use game::*;
 
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
-        .add_plugins(character::CharacterPlugin)
+        .add_plugins(GamePlugin)
         .add_systems(Startup, spawn)
         .run();
 }
