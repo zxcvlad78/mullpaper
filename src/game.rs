@@ -17,12 +17,5 @@ fn spawn(
 ) {
     commands.spawn(Camera2d);
 
-    commands.spawn((
-        Transform::from_xyz(0.0, 0.0, 0.0),
-        Sprite::from_image(asset_server.load("core/res/test.png")),
-        character::components::Velocity::default(),
-        character::components::MoveSpeed::default(),
-        character::components::DesiredVelocity::default(),
-        character::components::CharacterController
-    ));
+    commands.spawn(character::bundles::CharacterBundle::default());
 }

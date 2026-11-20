@@ -1,6 +1,7 @@
 use bevy::prelude::*;
 pub mod components;
 pub mod systems;
+pub mod bundles;
 
 pub struct CharacterPlugin;
 impl Plugin for CharacterPlugin {
