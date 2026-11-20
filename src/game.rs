@@ -16,6 +16,8 @@ fn spawn(
     asset_server: Res<AssetServer>
 ) {
     commands.spawn(Camera2d);
-
-    commands.spawn(character::bundles::CharacterBundle::default());
+    println!("{}", 12);
+    commands.spawn(
+        character::bundles::CharacterBundle::default()
+    );
 }

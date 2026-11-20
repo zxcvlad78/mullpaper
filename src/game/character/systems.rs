@@ -41,7 +41,12 @@ pub fn apply_velocity(
     )>,
 ) {
     for (velocity, mut transform) in &mut query {
-        transform.translation.x += velocity.linear.x * time.delta_secs();
-        transform.translation.y += velocity.linear.y * time.delta_secs();
+        if velocity.linear != Vec2::ZERO {
+            transform.translation.x += velocity.linear.x * time.delta_secs();
+            transform.translation.y += velocity.linear.y * time.delta_secs();
+        }
+        if velocity.angular != 0.0 {
+            transform.rotation.x += velocity.angular * time.delta_secs();;
+        }
     }
 }
