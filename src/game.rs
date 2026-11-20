@@ -12,6 +12,7 @@ impl Plugin for GamePlugin {
 }
 
 fn spawn(
+    
     mut commands: Commands,
     asset_server: Res<AssetServer>
 ) {
